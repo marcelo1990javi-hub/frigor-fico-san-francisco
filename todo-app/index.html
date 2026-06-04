@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Lista de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Mi Lista de Tareas</h1>
+            <p class="subtitle">Organiza tus tareas diarias</p>
+        </header>
+
+        <main>
+            <!-- Sección de entrada -->
+            <div class="input-section">
+                <input 
+                    type="text" 
+                    id="taskInput" 
+                    placeholder="Agregar una nueva tarea..." 
+                    class="task-input"
+                >
+                <select id="categorySelect" class="category-select">
+                    <option value="general">General</option>
+                    <option value="trabajo">Trabajo</option>
+                    <option value="personal">Personal</option>
+                    <option value="compras">Compras</option>
+                    <option value="salud">Salud</option>
+                </select>
+                <button id="addBtn" class="add-btn">➕ Agregar</button>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filter-section">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="pending">Pendientes</button>
+                <button class="filter-btn" data-filter="completed">Completadas</button>
+                <button class="filter-btn danger" id="clearBtn">🗑️ Limpiar</button>
+            </div>
+
+            <!-- Estadísticas -->
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Total:</span>
+                    <span class="stat-value" id="totalTasks">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Pendientes:</span>
+                    <span class="stat-value pending" id="pendingTasks">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Completadas:</span>
+                    <span class="stat-value completed" id="completedTasks">0</span>
+                </div>
+            </div>
+
+            <!-- Lista de tareas -->
+            <div id="taskList" class="task-list">
+                <p class="empty-message">📭 No hay tareas aún. ¡Crea una nueva!</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>💾 Tus tareas se guardan automáticamente en el navegador</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
